@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             text: 'Numbers',
             ontap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => NumbersPage()));
+                  MaterialPageRoute(builder: (context) => const NumbersPage()));
             },
           ),
         ),
@@ -32,8 +32,10 @@ class HomePage extends StatelessWidget {
             color: const Color(0xff527F30),
             text: 'Family Members',
             ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => FamilyMembersPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FamilyMembersPage()));
             },
           ),
         ),
@@ -43,7 +45,7 @@ class HomePage extends StatelessWidget {
             text: 'Colors',
             ontap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ColorsPage()));
+                  MaterialPageRoute(builder: (context) => const ColorsPage()));
             },
           ),
         ),
@@ -53,7 +55,7 @@ class HomePage extends StatelessWidget {
             text: 'Phrases',
             ontap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PhrasesPage()));
+                  MaterialPageRoute(builder: (context) => const PhrasesPage()));
             },
           ),
         ),

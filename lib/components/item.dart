@@ -1,11 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:toku/models/data_model.dart';
 
 class Item extends StatelessWidget {
   const Item({super.key, required this.data, required this.color});
-  final data;
+  final DataModel data;
   final Color color;
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class Item extends StatelessWidget {
       child: Row(children: [
         if (data.image != null)
           Container(
-              color: const Color(0xffFEF3D7), child: Image.asset(data.image)),
+              color: const Color(0xffFEF3D7), child: Image.asset(data.image!)),
         const SizedBox(
           width: 14,
         ),
@@ -41,15 +40,9 @@ class Item extends StatelessWidget {
           padding: const EdgeInsets.only(right: 14),
           child: IconButton(
               onPressed: () {
-                //create a new player
-                try {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio(data.sound),
-                  );
-                } catch (ex) {
-                  print(ex);
-                }
+                AssetsAudioPlayer().open(
+                  Audio(data.sound),
+                );
               },
               icon: const Icon(
                 Icons.play_arrow,
